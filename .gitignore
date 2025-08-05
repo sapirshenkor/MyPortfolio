@@ -1,0 +1,20 @@
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# Backend
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+backend/venv/
+
+# Frontend  
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+
+# General
+.DS_Store
+*.log
