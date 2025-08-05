@@ -3,7 +3,7 @@
 .env.local
 .env.production
 .env.staging
-backend/.env
+backend/requirements.txt
 frontend/.env.local
 
 # Backend
