@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -22,7 +22,7 @@ async def get_projects():
         total=len(PROJECTS)        
     )
 
-@router.get("project/{project_id}", response_model=ProjectResponse)
+@router.get("/project/{project_id}", response_model=ProjectResponse)
 async def get_project(project_id: int):
     """Get a specific project by id"""
     project = next((project for project in PROJECTS if project["id"] == project_id), None)
@@ -41,7 +41,7 @@ async def get_featured_projects():
     
 
 #-----------------------Skills endpoints----------------------------
-@router.get("/skills", response_model=ProjectList)
+@router.get("/skills")
 async def get_skills():
     """Get all skills"""
     return {"skills": SKILLS}
@@ -50,7 +50,7 @@ async def get_skills():
 #-----------------------Contact endpoints----------------------------
 @router.post("/contact", response_model=ContactResponse)
 @limiter.limit("5/minute") #limit to 5 submissions per minute
-async def create_contact(contact: ContactCreate, db: Session = Depends(get_db), request: dict = Depends(get_remote_address)):
+async def create_contact(contact: ContactCreate, db: Session = Depends(get_db), request: Request):
     """Create a new contact submission"""
     try:
         db_contact = Contact(
