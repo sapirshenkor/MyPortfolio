@@ -50,7 +50,7 @@ async def get_skills():
 #-----------------------Contact endpoints----------------------------
 @router.post("/contact", response_model=ContactResponse)
 @limiter.limit("5/minute") #limit to 5 submissions per minute
-async def create_contact(contact: ContactCreate, db: Session = Depends(get_db), request: Request):
+async def create_contact(contact: ContactCreate, request: Request,db: Session = Depends(get_db)):
     """Create a new contact submission"""
     try:
         db_contact = Contact(
