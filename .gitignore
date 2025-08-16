@@ -4,7 +4,7 @@
 .env.production
 .env.staging
 backend/.env
-frontend/.env.local
+portfolio-frontend/.env.local
 
 # Backend
 backend/__pycache__/
@@ -13,9 +13,9 @@ backend/.pytest_cache/
 backend/venv/
 
 # Frontend  
-frontend/node_modules/
-frontend/.next/
-frontend/dist/
+portfolio-frontend/node_modules/
+portfolio-frontend/.next/
+portfolio-frontend/dist/
 
 # General
 .DS_Store
