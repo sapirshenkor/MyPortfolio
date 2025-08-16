@@ -16,8 +16,10 @@ class Settings(BaseSettings):
     
     # CORS
     ALLOWED_ORIGINS: List[str] = [
-        "http://localhost:3000",  # React.js dev
-        "https://your-portfolio.vercel.app"  # my deployed frontend
+        "http://localhost:3000",      # Local development
+    "http://127.0.0.1:3000",    # Local development
+    "https://my-portfolio-rose-eight-84.vercel.app",           # Your Vercel URL
+    "https://*.vercel.app",    # All Vercel preview deployments
     ]
     
     # Environment
