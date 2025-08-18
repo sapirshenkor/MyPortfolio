@@ -69,14 +69,14 @@ const Contact = () => {
     {
       icon: FaGithub,
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/sapirshenkor",
       color: "hover:text-gray-300",
       bgColor: "hover:bg-gray-700/20",
     },
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/sapir-shenkor-796b99302",
       color: "hover:text-blue-400",
       bgColor: "hover:bg-blue-500/20",
     },
