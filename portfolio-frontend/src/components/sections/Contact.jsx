@@ -41,7 +41,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "your.email@example.com",
+      value: "sapir000311@gmail.com",
       link: "mailto:your.email@example.com",
       color: "text-blue-400",
       bgColor: "from-blue-500/10 to-cyan-500/10",
@@ -116,8 +116,8 @@ const Contact = () => {
           </h2>
 
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from
-            you. Let's create something amazing together.
+            Have a project or an opportunity for me in mind? I'd love to hear
+            from you. Let's create something amazing together.
           </p>
         </div>
 

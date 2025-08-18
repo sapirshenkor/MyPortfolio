@@ -79,8 +79,9 @@ const Footer = () => {
             </div>
 
             <p className="text-gray-400 leading-relaxed max-w-md">
-              Passionate about creating exceptional digital experiences with
-              modern technologies. Let's build something amazing together!
+              Hands-on full-stack/Backend development experience. Skilled in
+              building robust, scalable applications from concept to deployment.
+              Known for problem-solving, independent learning, and teamwork!
             </p>
 
             {/* Social Links */}

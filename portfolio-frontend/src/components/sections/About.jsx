@@ -24,7 +24,13 @@ import {
   MapPin,
   Heart,
 } from "lucide-react";
-import { FaCode, FaGraduationCap, FaBriefcase, FaRocket } from "react-icons/fa";
+import {
+  FaCode,
+  FaGraduationCap,
+  FaBriefcase,
+  FaRocket,
+  FaShieldAlt,
+} from "react-icons/fa";
 import Button from "../common/Button";
 
 const About = () => {
@@ -84,31 +90,31 @@ const About = () => {
   // Learning & Development timeline
   const timeline = [
     {
-      icon: FaGraduationCap,
-      title: "Started Learning Programming",
-      company: "Self-Taught Journey",
-      period: "2022 - 2023",
+      icon: FaShieldAlt,
+      title: "Classified Role",
+      company: "Ministry of Defense",
+      period: "2020 - 2022",
       description:
-        "Began with Python basics, algorithms, and web development fundamentals.",
+        "Served in a classified position requiring security clearance Level 1. Gained discipline, teamwork, and problem-solving skills in high-responsibility environments.",
+      color: "text-red-400",
+    },
+    {
+      icon: FaGraduationCap,
+      title: "Academic Studies",
+      company: "Sami Shamoon College of Engineering",
+      period: "2022 - Present",
+      description:
+        "Pursuing a B.Sc. in Software Engineering (Data Science Track, GPA 91). Building strong foundations in algorithms, databases, and object-oriented programming.",
       color: "text-blue-400",
     },
     {
       icon: FaCode,
-      title: "First Full-Stack Projects",
-      company: "Personal Development",
-      period: "2023 - 2024",
+      title: "Hands-On Projects",
+      company: "Personal & Academic Work",
+      period: "2023 - Present",
       description:
-        "Built complete applications using FastAPI, React, and databases. Learned deployment with Railway and Vercel.",
+        "Developed multiple full-stack projects, from GIS-based real estate apps to e-commerce systems. Worked with React, FastAPI, Node.js, PostgreSQL, and MongoDB.",
       color: "text-purple-400",
-    },
-    {
-      icon: FaRocket,
-      title: "Advanced Portfolio Building",
-      company: "Current Focus",
-      period: "2024 - Present",
-      description:
-        "Creating professional-grade projects, contributing to open source, and building this amazing portfolio.",
-      color: "text-green-400",
     },
   ];
 
@@ -205,34 +211,43 @@ const About = () => {
           >
             <div className="space-y-4">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate{" "}
+                I'm a{" "}
                 <span className="text-blue-400 font-semibold">
-                  self-taught developer
+                  full-stack software engineering student
                 </span>{" "}
-                who believes that learning never stops. My journey started with
-                curiosity about how websites work and has grown into hands-on
-                experience building full-stack applications.
+                with a background in the Ministry of Defense, where I developed
+                discipline, problem-solving skills, and the ability to perform
+                under pressure. Since 2022, I’ve been pursuing my B.Sc. in
+                Software Engineering (Data Science track, GPA 91) while building
+                real-world projects that challenge me to grow as a developer.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                I have hands-on experience with{" "}
+                I’ve gained hands-on experience with{" "}
                 <span className="text-green-400 font-semibold">FastAPI</span>{" "}
                 and
                 <span className="text-yellow-400 font-semibold">
                   {" "}
                   Python
                 </span>{" "}
-                for backend development, building responsive interfaces with{" "}
+                for backend development, building dynamic interfaces with{" "}
                 <span className="text-blue-400 font-semibold">React</span>, and
-                deploying applications using modern platforms like Railway and
-                Vercel.
+                working with databases like{" "}
+                <span className="text-purple-400 font-semibold">
+                  PostgreSQL
+                </span>{" "}
+                and{" "}
+                <span className="text-purple-400 font-semibold">MongoDB</span>.
+                I’ve also deployed applications using platforms such as Railway
+                and Vercel.
               </p>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Every project teaches me something new, and I embrace the fact
-                that technology constantly evolves. I'm always experimenting
-                with new tools, reading documentation, and building projects to
-                deepen my understanding of the technologies I work with.
+                Every project I take on pushes me to learn something new — from
+                tackling complex algorithms to designing scalable systems. I’m
+                curious by nature, always exploring new technologies, reading
+                documentation, and building solutions that help me become a
+                stronger, more versatile developer.
               </p>
             </div>
 
@@ -240,7 +255,7 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-700">
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-blue-400" />
-                <span className="text-gray-300">Tel Aviv, Israel</span>
+                <span className="text-gray-300"> Israel</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Calendar size={18} className="text-purple-400" />
@@ -260,13 +275,6 @@ const About = () => {
                   className="mr-2 group-hover:scale-110 transition-transform"
                 />
                 Let's Connect
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => window.open("#", "_blank")}
-              >
-                <Download size={18} className="mr-2" />
-                Download Resume
               </Button>
             </div>
           </div>
@@ -313,7 +321,7 @@ const About = () => {
                             {item.period}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-300 text-md  leading-relaxed">
                           {item.description}
                         </p>
                       </div>

@@ -151,20 +151,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   View Code
                 </a>
               )}
-              {project.live_url && (
-                <a
-                  href={project.live_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors group"
-                >
-                  <ExternalLink
-                    size={18}
-                    className="mr-2 group-hover:scale-110 transition-transform"
-                  />
-                  Live Demo
-                </a>
-              )}
             </div>
 
             {/* Project Description */}
@@ -609,17 +595,6 @@ const Projects = () => {
                 <FaGithub size={16} />
               </a>
             )}
-            {project.live_url && (
-              <a
-                href={project.live_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <ExternalLink size={16} />
-              </a>
-            )}
           </div>
 
           {/* Project Icon */}
@@ -691,20 +666,6 @@ const Projects = () => {
                     className="mr-2 group-hover/link:scale-110 transition-transform"
                   />
                   Code
-                </a>
-              )}
-              {project.live_url && (
-                <a
-                  href={project.live_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-400 hover:text-blue-400 transition-colors text-sm group/link"
-                >
-                  <ExternalLink
-                    size={16}
-                    className="mr-2 group-hover/link:scale-110 transition-transform"
-                  />
-                  Live Demo
                 </a>
               )}
             </div>

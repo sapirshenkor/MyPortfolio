@@ -45,10 +45,10 @@ const Hero = () => {
   // Dynamic text rotation
   const dynamicTexts = [
     "Full Stack Developer",
+    "Backend Developer",
     "Continuous Learner",
     "Python Enthusiast",
     "Problem Solver",
-    "Code Builder",
   ];
 
   // Tech stack for floating badges
@@ -204,14 +204,6 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-        {/* Status Badge */}
-        <div className="inline-flex items-center px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8 animate-fade-in">
-          <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse" />
-          <span className="text-sm text-gray-300 font-medium">
-            Available for new opportunities
-          </span>
-        </div>
-
         {/* Profile Image/Avatar */}
         <div
           className="mb-12 animate-fade-in"
@@ -224,12 +216,29 @@ const Hero = () => {
 
             {/* Main profile container */}
             <div className="relative w-40 h-40 mx-auto bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl p-1 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-2xl">
-              <div className="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center">
+              <img
+                src="/images/profilePhoto.jpg"
+                alt="Sapir Shenkor - Full Stack Developer"
+                className="w-full h-full object-cover rounded-full transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                style={{
+                  objectPosition: "50% 30%",
+                }}
+                onError={(e) => {
+                  // Fallback if image fails to load
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "flex";
+                }}
+              />
+              {/* Fallback icon (hidden by default) */}
+              <div
+                className="w-full h-full bg-slate-900 rounded-3xl flex items-center justify-center"
+                style={{ display: "none" }}
+              >
                 <FaCode size={60} className="text-white drop-shadow-lg" />
               </div>
             </div>
 
-            {/* Floating particles around profile */}
+            {/* Keep the floating particles */}
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce opacity-80" />
             <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full animate-pulse opacity-80" />
             <div className="absolute top-1/2 -right-8 w-4 h-4 bg-pink-400 rounded-full animate-ping opacity-60" />
@@ -382,7 +391,6 @@ const Hero = () => {
               href: "https://www.linkedin.com/in/sapir-shenkor-796b99302",
               label: "LinkedIn",
             },
-            { icon: Download, href: "#", label: "Resume" },
           ].map((social) => {
             const IconComponent = social.icon;
             return (

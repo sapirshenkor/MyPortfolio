@@ -569,11 +569,12 @@ const Skills = () => {
               My Learning Philosophy
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              "I believe the best developers are perpetual students. Every
-              project teaches me something new, every bug is a learning
-              opportunity, and every technology I explore makes me a more
-              well-rounded developer. I'm not an expert - I'm someone who loves
-              to learn, build, and grow."
+              "I see software development as a journey of constant growth. Each
+              project I take on sharpens my skills, each bug I solve deepens my
+              understanding, and every new technology I explore expands my
+              perspective. I don’t claim to know everything — but I’m driven by
+              curiosity, persistence, and a genuine love for building solutions
+              that work."
             </p>
           </div>
         </div>
