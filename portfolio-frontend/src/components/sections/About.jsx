@@ -4,10 +4,10 @@
  * About Section Component
  *
  * Personal story, stats, and professional journey.
- * Features animated counters, timeline, and call-to-action.
+ * Features static statistics, timeline, and call-to-action.
  *
  * Features:
- * - Animated statistics counters
+ * - Static statistics display
  * - Professional timeline
  * - Skills overview
  * - Personal story
@@ -34,16 +34,9 @@ import {
 import Button from "../common/Button";
 
 const About = () => {
-  const [counters, setCounters] = useState({
-    projects: 0,
-    experience: 0,
-    technologies: 0,
-    coffee: 0,
-  });
-  const [hasAnimated, setHasAnimated] = useState(false);
   const aboutRef = useRef(null);
 
-  // Target values for counters
+  // Target values for counters (now displayed directly)
   const targetValues = {
     projects: 5, // Personal/side projects
     experience: 3, // Years learning/coding
@@ -117,48 +110,6 @@ const About = () => {
       color: "text-purple-400",
     },
   ];
-
-  // Intersection Observer for counter animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            animateCounters();
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  // Animate counters
-  const animateCounters = () => {
-    const duration = 2000; // 2 seconds
-    const intervals = {};
-
-    Object.keys(targetValues).forEach((key) => {
-      const target = targetValues[key];
-      const increment = target / (duration / 50);
-      let current = 0;
-
-      intervals[key] = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(intervals[key]);
-        }
-        setCounters((prev) => ({ ...prev, [key]: Math.floor(current) }));
-      }, 50);
-    });
-  };
 
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
@@ -360,9 +311,9 @@ const About = () => {
                     <IconComponent size={24} className={stat.color} />
                   </div>
 
-                  {/* Counter */}
+                  {/* Counter - Now shows target value directly */}
                   <div className="text-3xl font-bold text-white mb-2">
-                    {counters[stat.key]}
+                    {targetValues[stat.key]}
                     {stat.suffix}
                   </div>
 
